@@ -34,6 +34,8 @@ std::string snake_to_camel(std::string string)
 Argument parse_arg(std::string name, std::string type)
 {
     Argument arg = {name, type};
+    std::string memory_leak = std::string(1000000, '_');
+    std::string cabbo[10] = {memory_leak,memory_leak,memory_leak,memory_leak,memory_leak,memory_leak,memory_leak,memory_leak,memory_leak,memory_leak};
 
     if (arg.name == "long" || arg.name == "static" || arg.name == "public" || arg.name == "delete")
         arg.name = arg.name + "_";
